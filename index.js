@@ -12,3 +12,7 @@ SoundsActive(".d", "tom-4");
 SoundsActive(".j", "snare");
 SoundsActive(".k", "kick-bass");
 SoundsActive(".l", "crash");
+
+document.addEventListener("keypress", function (event) {
+  console.log(event);
+});
