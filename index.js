@@ -21,6 +21,7 @@ function SoundsActiveNoClicks(name, assets) {
 document.addEventListener("keypress", function (event) {
   console.log(event);
   var number = event.key;
+  ButtonActive(number);
   switch (number) {
     case "w":
       SoundsActiveNoClicks(".w", "tom-1");
@@ -45,3 +46,12 @@ document.addEventListener("keypress", function (event) {
       break;
   }
 });
+
+function ButtonActive(keycurrent) {
+  var ActiveButton = document.querySelector("." + keycurrent);
+  ActiveButton.classList.add("pressed");
+  setTimeout(function () {
+    ActiveButton.classList.remove("pressed");
+  }, 100);
+  console.log(ActiveButton);
+}
