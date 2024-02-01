@@ -2,6 +2,10 @@ function SoundsActive(name, assets) {
   document.querySelector(name).addEventListener("click", function () {
     var audio = new Audio("sounds/" + assets + ".mp3");
     audio.play();
+    document.querySelector(name).classList.add("pressed");
+    setTimeout(function () {
+      document.querySelector(name).classList.remove("pressed");
+    }, 100);
   });
 }
 
@@ -53,5 +57,4 @@ function ButtonActive(keycurrent) {
   setTimeout(function () {
     ActiveButton.classList.remove("pressed");
   }, 100);
-  console.log(ActiveButton);
 }
